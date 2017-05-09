@@ -1,0 +1,9 @@
+[Unit]
+Description=Set desktop wallpaper
+
+[Service]
+Type=simple
+ExecStart=/home/jacob/bin/rotate-wallpaper
+
+[Install]
+WantedBy=default.target
