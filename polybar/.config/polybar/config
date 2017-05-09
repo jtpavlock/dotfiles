@@ -31,12 +31,12 @@ line-color = #f00
 padding = 2
 module-margin = 1
 
-font-0 = DejaVu Sans Mono:size=10;0
+font-0 = DejaVu Sans Mono:size=10;2
 font-1 = FontAwesome:size=10;2
 locale = de_DE.UTF-8
 
 modules-left = i3
-modules-center =
+modules-center = date
 modules-right =
 
 dim-value = 1.0
@@ -51,8 +51,8 @@ index-sort = true
 
 format = <label-state>
 label-focused = 
-label-unfocused =  
-label-visible =  
+label-unfocused = 
+label-visible = 
 
 label-focused-padding = 1
 label-visible-padding = 1
@@ -62,5 +62,14 @@ enable-click = true
 enable-scroll = false
 wrapping-scroll = false
 reverse-scroll = false
+
+[module/date]
+type = internal/date
+
+interval = 1.0
+label = %date% %time%
+
+date = %a %b %d,
+time = %H:%M
 
 ; vim:ft=dosini

@@ -51,7 +51,7 @@ if [ $? -eq 0 ]; then
 	# launch polybar on both screens
 	# delay to launch after i3
 	(sleep 5; \
-	/home/jacob/.config/polybar/launch $EXTERNAL_OUTPUT1 $EXTERNAL_OUTPUT2) &
+	/home/jacob/.config/polybar/launch $EXTERNAL_OUTPUT1) &
 	
 else
 	# no externals--only laptop
