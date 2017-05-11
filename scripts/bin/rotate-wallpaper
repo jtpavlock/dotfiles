@@ -1,5 +1,0 @@
-#!/bin/sh
-#
-# set desktop background wallpaper
-
-/usr/bin/feh --bg-fill --randomize /home/jacob/pictures/wallpaper/*
