@@ -29,7 +29,7 @@ __parse_git_status () {
                   | grep '\(Untracked\|Changes\|Changed but not updated:\|modified:\)')
 
     if [[ $(echo ${gitstat} \
-                | grep -c "^Changes to be committed:\|modified:") > 0 ]]; then
+                | grep -c "^Changes not statged for commit:\|modified:") > 0 ]]; then
         echo -n "$GIT_PROMPT_DIRTY"
     fi
 
