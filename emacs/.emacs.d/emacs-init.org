@@ -384,7 +384,7 @@
    #+END_SRC
 
 * Text
-** Formatting
+** COMMENT Formatting
 
    Set =fill-column= to 80.
    #+BEGIN_SRC emacs-lisp
@@ -414,7 +414,8 @@
 
          ;; enable for all programming and text modes
          (dolist (hook '(prog-mode-hook text-mode-hook))
-           (add-hook hook #'my-whitespace-mode))))
+           (add-hook hook #'my-whitespace-mode)))
+       :diminish whitespace-mode)
    #+END_SRC
 
    Delete trailing whitespace everytime a buffer is saved.
