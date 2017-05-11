@@ -30,6 +30,3 @@ alias la='ls -al'
 
 # lock screen
 alias lock='i3lock-fancy'
-
-# logout
-alias ulogout='pkill -KILL -u $(whoami)'

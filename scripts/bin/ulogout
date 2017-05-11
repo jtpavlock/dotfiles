@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# logout of current user session
+
+pkill -KILL -u $(whoami)
