@@ -370,7 +370,7 @@
        (evilnc-default-hotkeys))
    #+END_SRC
 
-** Syntax Highlighting
+** COMMENT Syntax Highlighting
 
    Turn on syntax highlighting whenever possible.
    #+BEGIN_SRC emacs-lisp
@@ -381,6 +381,11 @@
    #+BEGIN_SRC emacs-lisp
      (show-paren-mode t)
      (setq show-paren-delay 0.0)     ; remove delay
+   #+END_SRC
+
+   Add [[https://github.com/holomorph/systemd-mode][Systemd Mode]] for systemd syntax highlighting.
+   #+BEGIN_SRC emacs-lisp
+     (use-package systemd)
    #+END_SRC
 
 * Text
