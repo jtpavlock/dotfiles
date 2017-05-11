@@ -156,7 +156,8 @@
          ;; quick commands
          "SPC"        '(execute-extended-command      :which-key "M-x")
          "TAB"        '(previous-buffer               :which-key "last buffer")
-         "!"          '(shell-command                 :which-key "shell command")
+         ";"          '(shell-command                 :which-key "shell command")
+         "d"          '(dired                         :which-key "dired")
          "f"          '(find-file                     :which-key "find file")
          "l"          '(counsel-locate                :which-key "locate file")
          "s"          '(swiper                        :which-key "search")
@@ -187,7 +188,7 @@
          "wh"         '(evil-window-left              :which-key "switch left")
          "wj"         '(evil-window-down              :which-key "switch down")
          "wk"         '(evil-window-up                :which-key "switch up")
-         "wl"         '(evil-window-right             :which-key "switch down")
+         "wl"         '(evil-window-right             :which-key "switch right")
          "ws"         '(:ignore t                     :which-key "split")
          "wsh"        '(split-window-right            :which-key "horizontal")
          "wsv"        '(split-window-below            :which-key "vertical")))
