@@ -9,3 +9,6 @@
 # systemd
 /systemd/.config/systemd/user/default.target.wants/
 /systemd/.config/systemd/user/timers.target.wants/
+
+# swap files
+*.swp
