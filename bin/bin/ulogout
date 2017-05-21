@@ -1,5 +1,6 @@
 #!/bin/sh
 #
 # logout of current user session
+# script because we only need once per session
 
 pkill -KILL -u $(whoami)

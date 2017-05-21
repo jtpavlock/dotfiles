@@ -30,3 +30,9 @@ alias la='ls -al'
 
 # lock screen
 alias lock='i3lock-fancy'
+
+## show some info
+
+# battery info
+alias battery='upower -i $(upower -e | grep 'BAT') \
+| grep --color=never -E "time to empty|percentage"'
