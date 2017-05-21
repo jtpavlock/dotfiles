@@ -5,6 +5,7 @@
 /emacs/.emacs.d/emacs-init.el
 /emacs/.emacs.d/smex-items
 /emacs/.emacs.d/recentf
+/emacs/.emacs.d/eshell
 
 # systemd
 /systemd/.config/systemd/user/default.target.wants/
