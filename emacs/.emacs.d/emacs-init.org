@@ -158,8 +158,6 @@
          "TAB"        '(previous-buffer               :which-key "last buffer")
          ";"          '(shell-command                 :which-key "shell command")
          "d"          '(dired                         :which-key "dired")
-         "f"          '(find-file                     :which-key "find file")
-         "l"          '(counsel-locate                :which-key "locate file")
          "s"          '(swiper                        :which-key "search")
          "u"          '(undo-tree-visualize           :which-key "undo tree")
 
@@ -167,6 +165,11 @@
          "b"          '(:ignore t                     :which-key "buffer")
          "bk"         '(kill-buffer                   :which-key "kill")
          "bs"         '(switch-to-buffer              :which-key "switch")
+
+         ;; files
+         "f"          '(:ignore t                     :which-key "file")
+         "ff"         '(find-file                     :which-key "find")
+         "fl"         '(counsel-locate                :which-key "locate")
 
          ;; help
          "h"          '(:ignore t                     :which-key "help")
