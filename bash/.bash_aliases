@@ -31,6 +31,10 @@ alias la='ls -al'
 # lock screen
 alias lock='i3lock-fancy'
 
+# volume control
+alias mute='amixer set Master mute'
+alias unmute='amixer set Master unmute'
+
 ## show some info
 
 # battery info
