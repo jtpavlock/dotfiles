@@ -35,6 +35,9 @@ alias lock='i3lock-fancy'
 alias mute='amixer set Master mute'
 alias unmute='amixer set Master unmute'
 
+# network speed test
+alias speedtest='speedtest-cli --simple'
+
 ## show some info
 
 # battery info
