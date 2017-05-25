@@ -22,7 +22,7 @@ offset-y = 0
 radius = 0.0
 
 ; argb
-background = #cc1d1f21
+background = #551d1f21
 foreground = ${colors.white}
 
 line-size = 1
@@ -38,7 +38,7 @@ locale = de_DE.UTF-8
 
 modules-left = i3
 modules-center = date
-modules-right = wireless-network volume battery
+modules-right = wired-network wireless-network volume battery
 
 dim-value = 1.0
 enable-ipc = false
@@ -111,5 +111,11 @@ type = internal/network
 interface = wlp3s0
 
 label-connected = %{T3}%essid% 
+
+[module/wired-network]
+type = internal/network
+interface = eno1
+
+label-connected = 
 
 ; vim:ft=dosini
