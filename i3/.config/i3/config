@@ -217,4 +217,4 @@ bindsym $mod2+l exec /usr/bin/i3lock-fancy
 exec /usr/bin/compton -b
 
 # load polybar for testing
-exec_always --no-startup-id $HOME/.config/polybar/launch eDP1
+#exec_always --no-startup-id $HOME/.config/polybar/launch eDP1
