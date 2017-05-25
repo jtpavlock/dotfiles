@@ -25,8 +25,8 @@ export LESS='-R '
 ## shorten some commands
 
 # ls
-alias ll='ls -l'
-alias la='ls -al'
+alias ll='ls -lh'
+alias la='ls -alh'
 
 # lock screen
 alias lock='i3lock-fancy'
