@@ -66,6 +66,9 @@ fi
 # remap caps lock to act as escape key (doesn't swap)
 setxkbmap -option caps:escape
 
+# bind keys
+xbindkeys
+
 # use "udiskie" to automatically mount usb devices
 udiskie &
 
