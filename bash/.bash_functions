@@ -20,18 +20,18 @@ mpv-qe ()
 filebot-movie ()
 {
     filebot -rename "$1" --db TheMovieDB \
-            --format "{ny}/{ny} [{vf}][{source}][{vc}]" "$2"
+            --format "{ny}/{ny} [{vf}][{source}]" "$2"
 }
 filebot-tv ()
 {
     filebot -rename "$1" --db TheTVDB \
-            --format "{ny}/Season {s.pad(2)}/\
-{s00e00} - {t} ({airdate}) [{vf}][{source}][{vc}]" "$2"
+            --format "../{ny}/Season {s.pad(2)}/\
+{s00e00} - {t} [{vf}][{source}]" "$2"
 }
 # tv anime
 filebot-tva ()
 {
     filebot -rename "$1" --db AniDB \
-            --format "{ny}/Season {s.pad(2)}/\
-{s00e00} - {t} ({airdate}) [{vf}][{source}][{vc}]" "$2"
+            --format "../{ny}/Season {s.pad(2)}/\
+{s00e00} - {t} [{vf}][{source}]" "$2"
 }
