@@ -171,6 +171,10 @@
          "ff"         '(find-file                     :which-key "find")
          "fl"         '(counsel-locate                :which-key "locate")
 
+         ;; git (magit)
+         "g"          '(:ignore t                     :which-key "git")
+         "gs"         '(magit-status                  :which-key "status")
+
          ;; help
          "h"          '(:ignore t                     :which-key "help")
          "hb"         '(describe-bindings             :which-key "describe bindings")
@@ -373,7 +377,7 @@
        (evilnc-default-hotkeys))
    #+END_SRC
 
-** COMMENT Syntax Highlighting
+*** Syntax Highlighting
 
    Turn on syntax highlighting whenever possible.
    #+BEGIN_SRC emacs-lisp
@@ -389,6 +393,12 @@
    Add [[https://github.com/holomorph/systemd-mode][Systemd Mode]] for systemd syntax highlighting.
    #+BEGIN_SRC emacs-lisp
      (use-package systemd)
+   #+END_SRC
+
+** Git
+   #+BEGIN_SRC emacs-lisp
+     (use-package magit
+       :commands magit-status)
    #+END_SRC
 
 * Text
