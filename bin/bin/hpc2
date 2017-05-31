@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# helper script to go with $HOME/bin/hpc
+
+/opt/krb5/bin/pkinit m184998@HPCMP.HPC.MIL
+/opt/ossh/bin/ssh m184998@gordon.navydsrc.hpc.mil

@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# login to hpcmp (change server in hpc2)
+
+# set environment variables
+export PKINIT_IDENTITY=PKCS11:/usr/lib/pkcs11/libcoolkeypk11.so
+export KRB5_CONFIG=/opt/krb5/etc/krb5.conf
+
+# start subshell
+/opt/krb5/bin/kshell -c /home/jacob/bin/hpc2
