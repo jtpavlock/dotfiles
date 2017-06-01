@@ -22,7 +22,7 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R '
 
-## shorten some commands
+## change some commands
 
 # ls
 alias ll='ls -lh'
@@ -41,6 +41,14 @@ alias speedtest='speedtest-cli --simple'
 # battery info
 alias battery='upower -i $(upower -e | grep 'BAT') \
 | grep --color=never -E "time to empty|percentage"'
+alias bat='battery'
 
 # disk usage
 alias disk='df -h | grep --color=never -e /dev/sd -e Filesystem'
+
+# network manager
+alias network='cmst'
+aliat net='network'
+
+## typos
+alias pacuar='pacaur'
