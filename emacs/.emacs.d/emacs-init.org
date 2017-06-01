@@ -393,9 +393,25 @@
    #+END_SRC
 
 ** Git
+   Use [[https://github.com/magit/magit][Magit]]
    #+BEGIN_SRC emacs-lisp
      (use-package magit
-       :commands magit-status)
+       :commands magit-status
+       :init
+       ;; open magit fullscreen
+       (defadvice magit-status (around magit-fullscreen activate)
+         (window-configuration-to-register :magit-fullscreen)
+         ad-do-it
+         (delete-other-windows))
+       :config
+       ;; use ivy
+       (setq magit-completing-read-function 'ivy-completing-read))
+   #+END_SRC
+
+   Setup Evil keybindings with [[https://github.com/emacs-evil/evil-magit][evil-magit]]
+   #+BEGIN_SRC emacs-lisp
+     (use-package evil-magit
+       :after magit)
    #+END_SRC
 
 * Text
