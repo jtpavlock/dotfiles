@@ -58,7 +58,7 @@ function _bash_prompt(){
 ${PS1_CYAN}$(__git_ps1 '%s') ${PS1_RED}$(__parse_git_status)")
 
     # finally, set PS1
-    PS1="\n${PS1_MAGENTA}\u ${PS1_GREY}at${PS1_YELLOW} \h \
+    PS1="${PS1_MAGENTA}\u ${PS1_GREY}at${PS1_YELLOW} \h \
 ${PS1_GREY}in${PS1_GREEN} \w ${GIT_INFO}\
 \n${SCREEN_ESC}${EXIT_CODE_COLOR}\\\$${PS1_RESET} "
 }
