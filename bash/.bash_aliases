@@ -48,7 +48,7 @@ alias disk='df -h | grep --color=never -e /dev/sd -e Filesystem'
 
 # network manager
 alias network='cmst'
-aliat net='network'
+alias net='network'
 
 ## typos
 alias pacuar='pacaur'
