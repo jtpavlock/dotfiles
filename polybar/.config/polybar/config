@@ -40,6 +40,9 @@ modules-left = i3
 modules-center = date
 modules-right = wired-network wireless-network volume battery
 
+tray-position = right
+tray.background = ${root.background}
+
 dim-value = 1.0
 enable-ipc = false
 
