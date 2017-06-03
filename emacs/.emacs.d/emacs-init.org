@@ -157,6 +157,7 @@
          "SPC"        '(execute-extended-command      :which-key "M-x")
          "TAB"        '(previous-buffer               :which-key "last buffer")
          ";"          '(shell-command                 :which-key "shell command")
+         "c"          '(compile                       :which-key "compile")
          "d"          '(dired                         :which-key "dired")
          "g"          '(magit-status                  :which-key "git")
          "s"          '(swiper                        :which-key "search")
