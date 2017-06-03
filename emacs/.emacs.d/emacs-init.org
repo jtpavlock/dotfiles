@@ -165,6 +165,7 @@
          ;; buffers
          "b"          '(:ignore t                     :which-key "buffer")
          "bk"         '(kill-buffer                   :which-key "kill")
+         "bm"         '(buff-menu                     :which-key "menu")
          "bs"         '(switch-to-buffer              :which-key "switch")
 
          ;; files
