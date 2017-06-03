@@ -170,6 +170,7 @@
          ;; files
          "f"          '(:ignore t                     :which-key "file")
          "ff"         '(find-file                     :which-key "find")
+         "fi"         '(insert-file                   :which-key "insert")
          "fl"         '(counsel-locate                :which-key "locate")
 
          ;; help
