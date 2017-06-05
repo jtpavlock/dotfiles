@@ -186,6 +186,7 @@
          "o"          '(:ignore t                     :which-key "org")
          "oe"         '(org-export-dispatch           :which-key "export")
          "ol"         '(org-insert-link               :which-key "insert link")
+         "ot"         '(org-todo                      :which-key "todo")
 
          ;; windows
          "w"          '(:ignore t                     :which-key "window")
