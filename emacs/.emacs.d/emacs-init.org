@@ -166,7 +166,7 @@
          ;; buffers
          "b"          '(:ignore t                     :which-key "buffer")
          "bk"         '(kill-buffer                   :which-key "kill")
-         "bm"         '(buffer-menu                     :which-key "menu")
+         "bm"         '(buffer-menu                   :which-key "menu")
          "bs"         '(switch-to-buffer              :which-key "switch")
 
          ;; files
@@ -377,7 +377,17 @@
        (evilnc-default-hotkeys))
    #+END_SRC
 
-*** Syntax Highlighting
+** Error Checking
+
+  [[https://github.com/flycheck/flycheck][Flycheck]] for on the fly error checking.
+  #+BEGIN_SRC emacs-lisp
+    (use-package flycheck
+      :config
+      (global-flycheck-mode)
+      :diminish flycheck-mode)
+  #+END_SRC
+
+** Syntax Highlighting
 
    Turn on syntax highlighting whenever possible.
    #+BEGIN_SRC emacs-lisp
@@ -396,6 +406,7 @@
    #+END_SRC
 
 ** Git
+
    Use [[https://github.com/magit/magit][Magit]]
    #+BEGIN_SRC emacs-lisp
      (use-package magit
@@ -411,14 +422,14 @@
        (setq magit-completing-read-function 'ivy-completing-read))
    #+END_SRC
 
-   Setup Evil keybindings with [[https://github.com/emacs-evil/evil-magit][evil-magit]]
+   Setup Evil keybindings for magit with [[https://github.com/emacs-evil/evil-magit][evil-magit]]
    #+BEGIN_SRC emacs-lisp
      (use-package evil-magit
        :after magit)
    #+END_SRC
 
 * Text
-** COMMENT Formatting
+** Formatting
 
    Set =fill-column= to 80.
    #+BEGIN_SRC emacs-lisp
