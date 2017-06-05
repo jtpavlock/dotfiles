@@ -275,6 +275,11 @@
        (add-hook 'org-mode-hook (lambda () (org-bullets-mode t))))
    #+END_SRC
 
+   Set agenda files
+   #+BEGIN_SRC emacs-lisp
+     (setq org-agenda-files (list "~/personal/todo.org"))
+   #+END_SRC
+
 * Files
 ** Autosave
 
