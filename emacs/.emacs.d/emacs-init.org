@@ -184,8 +184,11 @@
 
          ;; org mode
          "o"          '(:ignore t                     :which-key "org")
+         "oa"         '(org-agenda                    :which-key "agenda")
          "oe"         '(org-export-dispatch           :which-key "export")
          "ol"         '(org-insert-link               :which-key "insert link")
+         "or"         '(org-archive-subtree-default   :which-key "archive")
+         "os"         '(org-schedule                  :which-key "schedule")
          "ot"         '(org-todo                      :which-key "todo")
 
          ;; windows
