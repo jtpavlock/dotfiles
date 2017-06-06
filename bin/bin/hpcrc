@@ -1,0 +1,14 @@
+# bashrc file for hpc
+
+# read in the regular bashrc first
+. ~/.bashrc
+
+# add HPC to front of prompt
+PS1="HPC|$PS1"
+
+# aliases
+alias sshfs="sshfs -o ssh_command=/opt/ossh/bin/ssh"
+alias ssh="/opt/ossh/bin/ssh"
+
+# start with kerberos ticket
+/opt/krb5/bin/pkinit m184998@HPCMP.HPC.MIL
