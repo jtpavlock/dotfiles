@@ -49,6 +49,7 @@ alias disk='df -h | grep --color=never -e /dev/sd -e Filesystem'
 # network manager
 alias network='cmst'
 alias net='network'
+alias wifi='network'
 
 # sound
 alias sound='pulsemixer'
