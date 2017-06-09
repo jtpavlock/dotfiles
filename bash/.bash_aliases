@@ -50,5 +50,12 @@ alias disk='df -h | grep --color=never -e /dev/sd -e Filesystem'
 alias network='cmst'
 alias net='network'
 
+# sound
+alias sound='pulsemixer'
+
+# monitors
+alias screen='lxrandr'
+alias monitor='screen'
+
 ## typos
 alias pacuar='pacaur'

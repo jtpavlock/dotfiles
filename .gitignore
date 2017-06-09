@@ -13,3 +13,4 @@
 
 # swap files
 *.swp
+/emacs/.emacs.d/.#smex-items
