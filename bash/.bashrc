@@ -23,9 +23,6 @@ fi
 # look for unknown commands in official packages
 source /usr/share/doc/pkgfile/command-not-found.bash
 
-# automatically prepend cd when just entering a path
-shopt -s autocd
-
 # environment variables
 export PATH=/home/jacob/bin:$PATH
 export TMPDIR=/tmp/
