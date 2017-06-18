@@ -55,6 +55,10 @@ alias wifi='network'
 alias sound='pulsemixer'
 alias audio='sound'
 
+# ncmpcpp
+alias music='ncmpcpp'
+alias mu='music'
+
 # monitors
 alias screen='lxrandr'
 alias monitor='screen'
