@@ -14,3 +14,7 @@
 # swap files
 *.swp
 /emacs/.emacs.d/.#smex-items
+/emacs/.emacs.d/.#recentf
+/mpd/.config/mpd/log
+/mpd/.config/mpd/pid
+/mpd/.config/mpd/state

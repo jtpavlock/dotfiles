@@ -53,6 +53,7 @@ alias wifi='network'
 
 # sound
 alias sound='pulsemixer'
+alias audio='sound'
 
 # monitors
 alias screen='lxrandr'
