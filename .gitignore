@@ -18,4 +18,8 @@
 /mpd/.config/mpd/log
 /mpd/.config/mpd/pid
 /mpd/.config/mpd/state
+
+# var
 /ncmpcpp/.ncmpcpp/error.log
+/beets/.config/beets/library.db
+/mpd/.config/mpd/database
