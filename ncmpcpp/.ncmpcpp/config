@@ -13,7 +13,7 @@ ncmpcpp_directory = ~/.ncmpcpp
 ## MPD clients (eg. ncmpc) also use that location.
 ##
 #
-#lyrics_directory = ~/.lyrics
+lyrics_directory = ~/.ncmpcpp/lyrics
 #
 ##### connection settings #####
 #
@@ -61,7 +61,7 @@ visualizer_sync_interval = 30
 #
 ## Available values: spectrum, wave, wave_filled, ellipse.
 ##
-visualizer_type = wave
+visualizer_type = spectrum
 #
 visualizer_look = ●▮
 #
@@ -306,13 +306,13 @@ visualizer_color = blue, cyan, green, yellow, magenta, red
 #
 ## Available values: classic, alternative.
 ##
-#user_interface = classic
+user_interface = alternative
 #
 #data_fetching_delay = yes
 #
 ## Available values: artist, album_artist, date, genre, composer, performer.
 ##
-#media_library_primary_tag = artist
+media_library_primary_tag = album_artist
 #
 #media_library_albums_split_by_date = yes
 #
@@ -453,7 +453,7 @@ visualizer_color = blue, cyan, green, yellow, magenta, red
 #
 #search_engine_default_search_mode = 1
 #
-#external_editor = nano
+external_editor = vim
 #
 ## Note: set to yes if external editor is a console application.
 ##
