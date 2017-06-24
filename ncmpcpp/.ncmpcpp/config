@@ -282,7 +282,7 @@ visualizer_color = blue, cyan, green, yellow, magenta, red
 #
 #discard_colors_if_item_is_selected = yes
 #
-#show_duplicate_tags = true
+show_duplicate_tags = no
 #
 #incremental_seeking = yes
 #

@@ -9,3 +9,11 @@
 # toggle mute
 "amixer set Master toggle"
         XF86AudioMute
+
+# increase screen brightness
+"xbacklight -inc 10"
+        XF86MonBrightnessUp
+
+# decrease screen brightness
+"xbacklight -dec 10"
+        XF86MonBrightnessDown
