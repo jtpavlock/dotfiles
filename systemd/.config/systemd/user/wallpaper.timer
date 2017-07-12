@@ -2,7 +2,7 @@
 Description=Change desktop wallpaper every 10 minutes
 
 [Timer]
-OnActiveSec=5
+OnActiveSec=3
 OnUnitActiveSec=15min
 
 [Install]
