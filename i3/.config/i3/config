@@ -31,9 +31,9 @@ set $down j
 set $left h
 set $right l
 
-# set mod to alt and mod2 to super (windows)
-set $mod Mod1
-set $mod2 Mod4
+# Mod4 = super (windows); Mod1 = alt
+set $mod Mod4
+set $mod2 Mod1
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -209,9 +209,6 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-# lock screen using i3-lock-fancy
-bindsym $mod2+l exec /usr/bin/i3lock-fancy
 
 # enable transparency support
 exec /usr/bin/compton -b
