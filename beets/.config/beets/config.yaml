@@ -9,6 +9,8 @@ paths:
         default: $albumartist/$album ($year)/$track - $title
         comp: Compilations/$album ($year)/$track - $title
 
+original_date: yes
+
 plugins: copyartifacts fetchart info scrub
 
 fetchart:
