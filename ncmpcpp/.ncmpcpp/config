@@ -52,7 +52,7 @@ visualizer_in_stereo = yes
 ## that sane values start with >=10.
 ##
 #
-visualizer_sync_interval = 30
+visualizer_sync_interval = 20
 #
 ##
 ## Note: To enable spectrum frequency visualization you need to compile ncmpcpp
@@ -61,7 +61,7 @@ visualizer_sync_interval = 30
 #
 ## Available values: spectrum, wave, wave_filled, ellipse.
 ##
-visualizer_type = spectrum
+visualizer_type = wave
 #
 visualizer_look = ●▮
 #
@@ -338,7 +338,7 @@ media_library_primary_tag = album_artist
 #
 #follow_now_playing_lyrics = no
 #
-#fetch_lyrics_for_current_song_in_background = no
+fetch_lyrics_for_current_song_in_background = yes
 #
 #store_lyrics_in_song_dir = no
 #
