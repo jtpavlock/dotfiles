@@ -186,6 +186,7 @@
          ;; org mode
          "o"          '(:ignore t                     :which-key "org")
          "oa"         '(org-agenda                    :which-key "agenda")
+         "od"         '(org-deadline                  :which-key "deadline")
          "oe"         '(org-export-dispatch           :which-key "export")
          "ol"         '(org-insert-link               :which-key "insert link")
          "or"         '(org-archive-subtree-default   :which-key "archive")
@@ -288,6 +289,11 @@
    #+BEGIN_SRC emacs-lisp
      (setq org-todo-keywords
            '((sequence "TODO" "WAITING" "|" "DONE")))
+   #+END_SRC
+
+   Don't show sublevel todo tasks
+   #+BEGIN_SRC emacs-lisp
+     (setq org-agenda-todo-list-sublevels nil)
    #+END_SRC
 
 * Files
