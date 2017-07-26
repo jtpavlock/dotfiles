@@ -44,7 +44,7 @@ alias battery='upower -i $(upower -e | grep 'BAT') \
 alias bat='battery'
 
 # disk usage
-alias disk='df -h | grep --color=never -e /dev/sd -e Filesystem'
+alias disk='df -h | grep --color=never -e /dev/sd -e Filesystem -e simple-mtpfs'
 
 # network manager
 alias network='cmst'
@@ -63,5 +63,11 @@ alias mu='music'
 alias screen='lxrandr'
 alias monitor='screen'
 
-## typos
+# typos
 alias pacuar='pacaur'
+
+# power options
+alias suspend='systemctl suspend'
+
+# mount phone
+alias mount-phone='simple-mtpfs --device 1 ~/phone'
