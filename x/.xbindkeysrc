@@ -7,8 +7,20 @@
         XF86AudioLowerVolume
 
 # toggle mute
-"amixer set Master toggle"
+"pactl set-sink-mute 1 toggle"
         XF86AudioMute
+
+# mpd toggle play/pause
+"mpc toggle"
+        XF86AudioPlay
+
+# mpd next song
+"mpc next"
+        XF86AudioNext
+
+# mpd previous song
+"mpc prev"
+        XF86AudioPrev
 
 # increase screen brightness
 "xbacklight -inc 10"
