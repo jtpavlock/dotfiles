@@ -3,35 +3,41 @@
 # define functions for bash
 
 # run mpv quietly in background
-mpv-q ()
-{
+mpv-q () {
     mpv --really-quiet "$1" &
     disown              # allow for closing current terminal
 }
 # run mpv quietly in backgound and exit current terminal
-mpv-qe ()
-{
+mpv-qe () {
     mpv --really-quiet "$1" &
     disown                              # allow for closing current terminal
     exit                                # close current terminal
 }
 
 # filebot renaming
-filebot-movie ()
-{
+filebot-movie () {
     filebot -rename "$1" --db TheMovieDB \
-            --format "{ny}/{ny} [{vf}][{source}]" "$2"
+            --format "{ny}/{ny} [{vf}][{source}]" "${@:2}"
 }
-filebot-tv ()
-{
+filebot-tv () {
     filebot -rename "$1" --db TheTVDB \
             --format "../{ny}/Season {s.pad(2)}/\
-{s00e00} - {t} [{vf}][{source}]" "$2"
+{s00e00} - {t} [{vf}][{source}]" "${@:2}"
 }
 # tv anime
-filebot-tva ()
-{
+filebot-tva () {
     filebot -rename "$1" --db AniDB \
             --format "../{ny}/Season {s.pad(2)}/\
-{s00e00} - {t} [{vf}][{source}]" "$2"
+{s00e00} - {t} [{vf}][{source}]" "${@:2}"
+}
+
+# rsync for syncing to archive
+rsync-movie () {
+    rsync -ah --progress "$1" ~/archive/movies && rm -r "$1"
+}
+rsync-tv () {
+    rsync -ah --progress "$1" ~/archive/tv && rm -r "$1"
+}
+rsync-music () {
+    rsync -ah --info=progress2 "$1" ~/archive/music && rm -r "$1"
 }
