@@ -270,7 +270,7 @@
    #+BEGIN_SRC emacs-lisp
      (use-package org
        :config
-       (setq org-src-fontify-natively t))    ; syntax highlight in source blocks
+       (setq org-src-fontify-natively t))     ; syntax highlight in source blocks
    #+END_SRC
 
    [[https://github.com/emacsorphanage/org-bullets][Org Bullets]] to show pretty bullets instead of =*=.
