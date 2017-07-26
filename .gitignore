@@ -21,6 +21,7 @@
 
 # var
 /ncmpcpp/.ncmpcpp/error.log
-/beets/.config/beets/library.db
 /mpd/.config/mpd/database
+/mpd/.config/mpd/playlists/
 /ncmpcpp/.ncmpcpp/lyrics/
+/beets/
