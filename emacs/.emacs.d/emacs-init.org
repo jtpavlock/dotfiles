@@ -282,7 +282,7 @@
 
    Set agenda files
    #+BEGIN_SRC emacs-lisp
-     (setq org-agenda-files (list "~/personal/todo.org"))
+     (setq org-agenda-files (list "~/org/todo.org"))
    #+END_SRC
 
    Change TODO sequence

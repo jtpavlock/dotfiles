@@ -36,7 +36,7 @@ alias mute='amixer set Master mute'
 alias unmute='amixer set Master unmute'
 
 # network speed test
-alias speedtest='speedtest-cli --simple'
+alias speedtest='speedtest-cli'
 
 # battery info
 alias battery='upower -i $(upower -e | grep 'BAT') \

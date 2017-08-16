@@ -7,5 +7,4 @@ music_dir=/run/media/inbox/music
 playlist_dir=/home/jacob/.config/mpd/playlists
 
 # sync-music
-rsync -avhO --delete $music_dir $phone_dir
-rsync -avhO $playlist_dir $phone_dir
+rsync -avhO --delete {$music_dir,$playlist_dir} $phone_dir

@@ -30,14 +30,3 @@ filebot-tva () {
             --format "../{ny}/Season {s.pad(2)}/\
 {s00e00} - {t} [{vf}][{source}]" "${@:2}"
 }
-
-# rsync for syncing to archive
-rsync-movie () {
-    rsync -ah --progress "$1" ~/archive/movies && rm -r "$1"
-}
-rsync-tv () {
-    rsync -ah --progress "$1" ~/archive/tv && rm -r "$1"
-}
-rsync-music () {
-    rsync -ah --info=progress2 "$1" ~/archive/music && rm -r "$1"
-}

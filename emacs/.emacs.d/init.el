@@ -6,6 +6,7 @@
  '(custom-safe-themes
    (quote
     ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
+ '(org-agenda-files nil)
  '(package-selected-packages
    (quote
     (flycheck evil-magit magit systemd evil-surround evil-nerd-commenter org-bullets evil-tutor evil flx smex counsel ivy general which-key linum-relative zenburn-theme smart-mode-line use-package))))
