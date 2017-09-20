@@ -1,73 +1,13 @@
-#!/bin/bash
-#
-# define aliases for bash
+# ssh tunnel
+alias ssh-tunnel='ssh -D 8123 -f -C -q -N'
 
-## make things colorful
+# usna mount
+alias mount-usna='sshfs usna:/home/mids/m184998/school /home/jacob/school'
+alias umount-usna='fusermount -u /home/jacob/school'
 
-alias ls='ls --color=auto'
-alias diff='diff --color=auto'
-alias grep='grep --color=auto'
+# pfp mount
+alias mount-pfp='sshfs usna:/var/www/html/PoweredFlight/pfp /home/jacob/pfp-remote'
+alias umount-pfp='fusermount -u /home/jacob/pfp-remote'
 
-# less
-export LESS=-R
-export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
-export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
-export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
-export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
-export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
-export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
-export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
-
-# syntax highlighting in less
-export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
-export LESS='-R '
-
-## change some commands
-
-# ls
-alias ll='ls -lh'
-alias la='ls -alh'
-
-# lock screen
-alias lock='i3lock-fancy'
-
-# volume control
-alias mute='amixer set Master mute'
-alias unmute='amixer set Master unmute'
-
-# network speed test
-alias speedtest='speedtest-cli'
-
-# battery info
-alias battery='upower -i $(upower -e | grep 'BAT') \
-| grep --color=never -E "time to empty|percentage"'
-alias bat='battery'
-
-# disk usage
-alias disk='df -h | grep --color=never -e /dev/sd -e Filesystem -e simple-mtpfs'
-
-# network manager
-alias network='cmst'
-alias net='network'
-alias wifi='network'
-
-# sound
-alias sound='pulsemixer'
-alias audio='sound'
-
-# ncmpcpp
-alias music='ncmpcpp'
-alias mu='music'
-
-# monitors
-alias screen='lxrandr'
-alias monitor='screen'
-
-# typos
-alias pacuar='pacaur'
-
-# power options
-alias suspend='systemctl suspend'
-
-# mount phone
-alias mount-phone='simple-mtpfs --device 1 ~/phone'
+# nas copy downloads to watch
+alias scp-nas='scp /home/jacob/Downloads/* jacob@nas:/mnt/tank/watch'

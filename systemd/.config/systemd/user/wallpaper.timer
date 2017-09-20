@@ -1,9 +1,0 @@
-[Unit]
-Description=Change desktop wallpaper every 10 minutes
-
-[Timer]
-OnActiveSec=3
-OnUnitActiveSec=15min
-
-[Install]
-WantedBy=timers.target

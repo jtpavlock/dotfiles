@@ -13,6 +13,8 @@
              ("org"          . "http://orgmode.org/elpa/")))
    #+END_SRC
 
+   #+RESULTS:
+
    Load and activate repositories.
    #+BEGIN_SRC emacs-lisp
      (package-initialize)    ; load repos
@@ -54,7 +56,7 @@
   Set default font.
   #+BEGIN_SRC emacs-lisp
     (add-to-list 'default-frame-alist
-                 '(font . "DejaVu Sans Mono-12"))
+                 '(font . "Ubuntu Mono-12"))
   #+END_SRC
 
 ** Mode Line
@@ -109,7 +111,7 @@
      (menu-bar-mode -1)
    #+END_SRC
 
-   [[https://github.com/Fanael/relative-line-numbers][Relative Line Numbers]]
+   [[https://github.com/coldnew/linum-relative][Relative Line Numbers]]
    #+BEGIN_SRC emacs-lisp
      (use-package linum-relative
        :config
@@ -450,6 +452,25 @@
        :after magit)
    #+END_SRC
 
+** Language Support
+  [[http://web-mode.org/][Web Mode]]
+  #+BEGIN_SRC emacs-lisp
+    (use-package web-mode
+      :config
+      (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
+      (setq web-mode-markup-indent-offset 2))
+  #+END_SRC
 * Text
 ** Formatting
 
