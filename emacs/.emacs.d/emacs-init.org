@@ -459,7 +459,6 @@
       :config
       (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
       (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
-      (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
       (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
       (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
       (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
@@ -471,6 +470,21 @@
       (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
       (setq web-mode-markup-indent-offset 2))
   #+END_SRC
+
+  [[https://github.com/dominikh/go-mode.el][Go]]
+  #+BEGIN_SRC emacs-lisp
+    (use-package go-mode)
+  #+END_SRC
+
+  [[https://github.com/ejmr/php-mode][PHP-Mode]]
+  #+BEGIN_SRC emacs-lisp
+    (use-package php-mode
+      :config
+      (autoload 'php-mode "php-mode" "Major mode for editing PHP code." t)
+      (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+      (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode)))
+  #+END_SRC
+
 * Text
 ** Formatting
 
