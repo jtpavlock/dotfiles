@@ -479,10 +479,13 @@
   [[https://github.com/ejmr/php-mode][PHP-Mode]]
   #+BEGIN_SRC emacs-lisp
     (use-package php-mode
-      :config
+      :init
       (autoload 'php-mode "php-mode" "Major mode for editing PHP code." t)
       (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
-      (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode)))
+      (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+      (setq flycheck-phpcs-standard "PSR2")
+      (add-hook 'php-mode-hook (lambda() (
+        setq fill-column 80))))
   #+END_SRC
 
 * Text
@@ -544,7 +547,8 @@
    Tab will always go to next tab stop
    #+BEGIN_SRC emacs-lisp
      (general-define-key :states '(insert emacs)
-                         "TAB" 'tab-to-tab-stop)
+                         "TAB" 'tab-to-tab-stop
+                         "<tab>" 'tab-to-tab-stop)
    #+END_SRC
 
 ** Manipulation
