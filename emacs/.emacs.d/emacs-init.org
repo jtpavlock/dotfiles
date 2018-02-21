@@ -32,9 +32,18 @@
 
     Bootstrap.
     #+BEGIN_SRC emacs-lisp
+      (unless (package-installed-p 'diminish)
+        (package-refresh-contents)
+        (package-install 'diminish))
+
       (unless (package-installed-p 'use-package)
         (package-refresh-contents)
         (package-install 'use-package))
+    #+END_SRC
+
+    Install packages automatically if not present on system.
+    #+BEGIN_SRC emacs-lisp
+      (setq use-package-always-ensure t)
     #+END_SRC
 
     Reduce load time.
@@ -43,11 +52,6 @@
         (require 'use-package))
       (require 'diminish)     ; for :diminish
       (require 'bind-key)     ; for any :bind variant
-    #+END_SRC
-
-    Install packages automatically if not present on system.
-    #+BEGIN_SRC emacs-lisp
-      (setq use-package-always-ensure t)
     #+END_SRC
 
 * Appearance
@@ -147,6 +151,7 @@
     [[https://github.com/noctuid/general.el][General]] to handle bindings.
     #+BEGIN_SRC emacs-lisp
       (use-package general
+        :defer t
         :config
         (general-define-key
 
@@ -154,6 +159,9 @@
          :states '(normal visual insert emacs motion)
          :prefix "SPC"                ; prefix for normal, visual, and motion
          :non-normal-prefix "C-SPC"   ; prefix for insert and emacs
+
+         ;; unbind prefix keys
+         "" 'nil
 
          ;; quick commands
          "SPC"        '(execute-extended-command      :which-key "M-x")
