@@ -151,7 +151,6 @@
     [[https://github.com/noctuid/general.el][General]] to handle bindings.
     #+BEGIN_SRC emacs-lisp
       (use-package general
-        :defer t
         :config
         (general-define-key
 
