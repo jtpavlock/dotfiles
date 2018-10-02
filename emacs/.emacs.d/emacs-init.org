@@ -415,6 +415,10 @@
     (use-package flycheck
       :config
       (global-flycheck-mode)
+      ; use pytho3 by default
+      (setq flycheck-python-pycompile-executable "/usr/bin/python3")
+      (setq flycheck-python-pylint-executable "/usr/bin/python3")
+      (setq flycheck-python-flake8-executable "/usr/bin/python3")
       :diminish flycheck-mode)
   #+END_SRC
 
