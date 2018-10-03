@@ -419,6 +419,7 @@
       (setq flycheck-python-pycompile-executable "/usr/bin/python3")
       (setq flycheck-python-pylint-executable "/usr/bin/python3")
       (setq flycheck-python-flake8-executable "/usr/bin/python3")
+      (flycheck-add-next-checker 'python-flake8 'python-pylint) ; use both linters
       :diminish flycheck-mode)
   #+END_SRC
 
@@ -463,7 +464,7 @@
        :after magit)
    #+END_SRC
 
-** Language Support
+** Language Specific
   [[http://web-mode.org/][Web Mode]]
   #+BEGIN_SRC emacs-lisp
     (use-package web-mode
@@ -497,6 +498,15 @@
       (setq flycheck-phpcs-standard "PSR2")
       (add-hook 'php-mode-hook (lambda()
                                  (setq fill-column 80))))
+  #+END_SRC
+
+  Python
+  #+BEGIN_SRC emacs-lisp
+    ; set tabs to 4 spaces
+    (add-hook 'python-mode-hook
+              (lambda ()
+                (setq tab-width 4)
+                (setq python-indent-offset 4)))
   #+END_SRC
 
 * Text
