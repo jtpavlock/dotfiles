@@ -158,6 +158,7 @@
          :states '(normal visual insert emacs motion)
          :prefix "SPC"                ; prefix for normal, visual, and motion
          :non-normal-prefix "C-SPC"   ; prefix for insert and emacs
+         :keymaps 'override           ; prevent bindings from being overriden
 
          ;; unbind prefix keys
          "" 'nil
