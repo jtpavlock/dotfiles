@@ -510,6 +510,13 @@
                 (setq python-indent-offset 4)))
   #+END_SRC
 
+  [[https://melpa.org/#/yaml-mode][Yaml-Mode]]
+  #+BEGIN_SRC emacs-lisp
+    (use-package yaml-mode
+      :config
+      (add-to-list 'auto-mode-alist '("\\.y[a]ml$" . yaml-mode)))
+  #+END_SRC
+
 * Text
 ** Formatting
 
