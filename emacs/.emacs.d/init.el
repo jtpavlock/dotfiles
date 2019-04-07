@@ -9,7 +9,7 @@
  '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (yaml-mode flycheck evil-magit magit systemd evil-surround evil-nerd-commenter org-bullets evil-tutor evil flx smex counsel ivy general which-key linum-relative zenburn-theme smart-mode-line use-package))))
+    (undo-tree php-mode go-mode web-mode yaml-mode flycheck evil-magit magit systemd evil-surround evil-nerd-commenter org-bullets evil-tutor evil flx smex counsel ivy general which-key linum-relative zenburn-theme smart-mode-line use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -27,6 +27,12 @@
      (setq load-prefer-newer t)
    #+END_SRC
 
+   Packages that aren't signed (skip signature check)
+   #+BEGIN_SRC emacs-lisp
+     (add-to-list 'package-unsigned-archives
+                  '("undo-tree"))
+   #+END_SRC
+
 *** Use Package
     /Use [[https://github.com/jwiegley/use-package][Use Package]] for tidy package configuration./
 
