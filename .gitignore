@@ -25,3 +25,4 @@
 /mpd/.config/mpd/playlists/
 /ncmpcpp/.ncmpcpp/lyrics/
 /beets/
+/emacs/.emacs.d/transient/history.el
