@@ -13,5 +13,3 @@ alias la='ls -alh'
 
 # power options
 alias reboot='systemctl reboot'
-
-alias pls='sudo !!'
