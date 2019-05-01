@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# define bash prompt
+
+# colors
+export PS1_GREY="\[$(tput bold; tput setaf 0)\]"
+export PS1_GREEN="\[$(tput bold; tput setaf 2)\]"
+export PS1_YELLOW="\[$(tput bold; tput setaf 3)\]"
+export PS1_MAGENTA="\[$(tput bold; tput setaf 5)\]"
+export PS1_CYAN="\[$(tput bold; tput setaf 6)\]"
+export PS1_WHITE="\[$(tput bold; tput setaf 7)\]"
+export PS1_RED="\[$(tput bold; tput setaf 1)\]"
+export PS1_RESET="\[$(tput sgr0)\]"
+
+# function to set PS1
+function _bash_prompt(){
+    # get exit status of last command
+    if [[ $? == 0 ]]; then
+        local EXIT_CODE_COLOR="${PS1_WHITE}"
+    else
+        local EXIT_CODE_COLOR="${PS1_RED}"
+    fi
+
+    # finally, set PS1
+    PS1="${PS1_MAGENTA}\u ${PS1_GREY}at${PS1_YELLOW} \h \
+${PS1_GREY}in${PS1_GREEN} \w \
+\n${SCREEN_ESC}${EXIT_CODE_COLOR}\\\$${PS1_RESET} "
+}
+
+# call _bash_prompt() each time the prompt is refreshed
+export PROMPT_COMMAND=_bash_prompt

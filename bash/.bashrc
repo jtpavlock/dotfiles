@@ -7,15 +7,15 @@
 
 # define aliases in a separate file
 if [ -f ~/.bash_aliases ]; then
-        . ~/.bash_aliases
+	. ~/.bash_aliases
 fi
 
 # define prompt in a separate file
 if [ -f ~/.bash_prompt ]; then
-        . ~/.bash_prompt
+	. ~/.bash_prompt
 fi
 
 # define functions in a separate file
 if [ -f ~/.bash_functions ]; then
-        . ~/.bash_functions
+	. ~/.bash_functions
 fi
