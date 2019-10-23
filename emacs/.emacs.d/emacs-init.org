@@ -9,8 +9,10 @@
      (setq package-archives
            '(("gnu"          . "https://elpa.gnu.org/packages/")
              ("melpa"        . "https://melpa.org/packages/")
-             ("melpa-stable" . "https://stable.melpa.org/packages/")
-             ("org"          . "http://orgmode.org/elpa/")))
+             ("melpa-stable" . "https://stable.melpa.org/packages/")))
+
+     (setq package-check-signature nil)  ; necessary to fix fetching errors
+
    #+END_SRC
 
    #+RESULTS:
@@ -25,12 +27,6 @@
    Always load newest version of a file. Prevents loading outdated bytecode.
    #+BEGIN_SRC emacs-lisp
      (setq load-prefer-newer t)
-   #+END_SRC
-
-   Packages that aren't signed (skip signature check)
-   #+BEGIN_SRC emacs-lisp
-     (add-to-list 'package-unsigned-archives
-                  '("undo-tree"))
    #+END_SRC
 
 *** Use Package
@@ -422,7 +418,7 @@
     (use-package flycheck
       :config
       (global-flycheck-mode)
-      ; use pytho3 by default
+      ; use python3 by default
       (setq flycheck-python-pycompile-executable "/usr/bin/python3")
       (setq flycheck-python-pylint-executable "/usr/bin/python3")
       (setq flycheck-python-flake8-executable "/usr/bin/python3")
