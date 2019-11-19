@@ -25,8 +25,58 @@ function set_virtualenv() {
     if [[ -z "${VIRTUAL_ENV}" ]]; then
         PYTHON_VIRTUALENV=""
     else
-        PYTHON_VIRTUALENV="${CYAN}(${VIRTUAL_ENV##*/})"
+        PYTHON_VIRTUALENV="${RED}(${VIRTUAL_ENV##*/})"
     fi
+}
+
+function set_git() {
+    local s='';
+    local branchName='';
+
+    # Check if the current directory is in a Git repository.
+    if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
+
+        # check if the current directory is in .git before running git checks
+        if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
+
+            # Ensure the index is up to date.
+            git update-index --really-refresh -q &>/dev/null;
+
+            # Check for uncommitted changes in the index.
+            if ! $(git diff --quiet --ignore-submodules --cached); then
+                s+='+';
+            fi;
+
+            # Check for unstaged changes.
+            if ! $(git diff-files --quiet --ignore-submodules --); then
+                s+='!';
+            fi;
+
+            # Check for untracked files.
+            if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+                s+='?';
+            fi;
+
+            # Check for stashed files.
+            if $(git rev-parse --verify refs/stash &>/dev/null); then
+                s+='$';
+            fi;
+
+        fi;
+
+        # Get the short symbolic ref.
+        # If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
+        # Otherwise, just give up.
+        branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+                        git rev-parse --short HEAD 2> /dev/null || \
+                        echo '(unknown)')";
+
+        [ -n "${s}" ] && s=" [${s}]";
+
+        echo -e "${GREY}on ${CYAN}${branchName}${s}";
+    else
+        return;
+    fi;
 }
 
 function bash_prompt() {
@@ -34,9 +84,15 @@ function bash_prompt() {
     set_virtualenv
 
     # finally, set PS1
-    PS1="${MAGENTA}\u ${GREY}at${YELLOW} \h \
-${GREY}in${GREEN} \w ${PYTHON_VIRTUALENV}\
-\n${SCREEN_ESC}${EXIT_CODE_COLOR}\\\$${RESET} "
+    PS1="${MAGENTA}\u " # username
+    PS1+="${GREY}at "
+    PS1+="${YELLOW}\h " # host
+    PS1+="${GREY}in "
+    PS1+="${GREEN}\w " # path
+    PS1+="$(set_git) " # git branch and status
+    PS1+="${PYTHON_VIRTUALENV}"
+    PS1+="\n"
+    PS1+="${SCREEN_ESC}${EXIT_CODE_COLOR}\\\$${RESET} "
 }
 
 # call _bash_prompt() each time the prompt is refreshed
