@@ -25,7 +25,7 @@ function set_virtualenv() {
     if [[ -z "${VIRTUAL_ENV}" ]]; then
         PYTHON_VIRTUALENV=""
     else
-        PYTHON_VIRTUALENV="${RED}(${VIRTUAL_ENV##*/})"
+        PYTHON_VIRTUALENV="${RED}(${VIRTUAL_ENV##*/}) "
     fi
 }
 
@@ -89,7 +89,7 @@ function bash_prompt() {
     PS1+="${YELLOW}\h " # host
     PS1+="${GREY}in "
     PS1+="${GREEN}\w " # path
-    PS1+="${PYTHON_VIRTUALENV} "
+    PS1+="${PYTHON_VIRTUALENV}"
     PS1+="$(set_git) " # git branch and status
     PS1+="\n"
     PS1+="${SCREEN_ESC}${EXIT_CODE_COLOR}\\\$${RESET} "
