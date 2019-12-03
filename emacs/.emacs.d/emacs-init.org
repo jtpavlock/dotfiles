@@ -423,7 +423,7 @@
       (setq flycheck-python-pylint-executable "/usr/bin/python3")
       (setq flycheck-python-flake8-executable "/usr/bin/python3")
       (add-to-list 'flycheck-disabled-checkers 'python-pylint)
-      (flycheck-add-next-checker 'python-flake8 'python-pycompile) ; use both linters
+      (flycheck-add-next-checker 'python-flake8 'python-pycompile)
       :diminish flycheck-mode)
   #+END_SRC
 
@@ -484,6 +484,7 @@
       (add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
       (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
       (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
       (setq web-mode-markup-indent-offset 2))
   #+END_SRC
 
