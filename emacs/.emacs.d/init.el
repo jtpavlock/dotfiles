@@ -28,3 +28,6 @@
 (org-babel-load-file
  (expand-file-name "emacs-init.org"
                    user-emacs-directory))
+
+;; temporary until I figure out how to get this to work with use-package
+(flycheck-add-mode 'javascript-eslint 'web-mode)

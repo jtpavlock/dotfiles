@@ -416,6 +416,7 @@
   [[https://github.com/flycheck/flycheck][Flycheck]] for on the fly error checking.
   #+BEGIN_SRC emacs-lisp
     (use-package flycheck
+      :after web-mode
       :config
       (global-flycheck-mode)
       ; use python3 by default
@@ -424,7 +425,24 @@
       (setq flycheck-python-flake8-executable "/usr/bin/python3")
       (add-to-list 'flycheck-disabled-checkers 'python-pylint)
       (flycheck-add-next-checker 'python-flake8 'python-pycompile)
-      :diminish flycheck-mode)
+      ; use eslint
+      (flycheck-add-mode 'javascript-eslint 'web-mode)
+      (setq-default flycheck-disabled-checkers (append flycheck-disabled-checkers '(javascript-jshint)))
+      (setq-default flycheck-disabled-checkers (append flycheck-disabled-checkers '(json-jsonlist)))
+      (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+      :diminish flycheck-mode
+    )
+
+    ; search for local eslint
+    (defun my/use-eslint-from-node-modules ()
+      (let* ((root (locate-dominating-file
+                    (or (buffer-file-name) default-directory)
+                    "node_modules"))
+             (eslint (and root
+                          (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                            root))))
+        (when (and eslint (file-executable-p eslint))
+          (setq-local flycheck-javascript-eslint-executable eslint))))
   #+END_SRC
 
 ** Syntax Highlighting
@@ -483,9 +501,12 @@
       (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
       (add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
       (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-      (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
       (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
-      (setq web-mode-markup-indent-offset 2))
+      (add-to-list 'auto-mode-alist '("\\.xml?\\'" . web-mode))
+      (setq web-mode-markup-indent-offset 2)
+      (setq web-mode-code-indent-offset 2)
+      (setq web-mode-css-indent-offset 2)
+    )
   #+END_SRC
 
   [[https://github.com/dominikh/go-mode.el][Go]]
