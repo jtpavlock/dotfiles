@@ -11,7 +11,4 @@ if [ -d "$HOME/.emacs.d/bin" ] ; then
     PATH="$HOME/.emacs.d/bin:$PATH"
 fi
 
-# map capslock to escape
-setxkbmap -option caps:escape
-
 export DOOMDIR=~/dotfiles/doom-emacs/.doom.d/
