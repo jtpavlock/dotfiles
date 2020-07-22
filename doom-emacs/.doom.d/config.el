@@ -62,3 +62,13 @@
 
 ;; automatically refresh magit on file changes
 (add-hook 'after-save-hook 'magit-after-save-refresh-status t)
+;;;; Keybinds
+
+;; venv virtual environments for python (pyvenv)
+(map! :after python
+      :map python-mode-map
+      :localleader
+      (:prefix ("v" . "venv")
+       :desc "Activate" "a" #'pyvenv-activate
+       :desc "Deactivate" "d" #'pyvenv-deactivate
+       ))
