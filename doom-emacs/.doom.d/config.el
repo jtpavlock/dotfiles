@@ -72,3 +72,7 @@
        :desc "Activate" "a" #'pyvenv-activate
        :desc "Deactivate" "d" #'pyvenv-deactivate
        ))
+
+(map! :leader
+      :desc "Execute shell command" ";" #'shell-command
+      )
