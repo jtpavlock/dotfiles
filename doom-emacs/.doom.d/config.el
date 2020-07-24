@@ -73,6 +73,14 @@
        :desc "Deactivate" "d" #'pyvenv-deactivate
        ))
 
+;; python poetry commands
+(map! :after python
+      :map python-mode-map
+      :localleader
+      (:prefix ("p" . "poetry")
+       :desc "menu" "p" #'poetry
+       ))
+
 (map! :leader
       :desc "Execute shell command" ";" #'shell-command
       )
