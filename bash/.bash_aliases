@@ -13,3 +13,6 @@ alias la='ls -alh'
 
 # power options
 alias reboot='systemctl reboot'
+
+# poetry
+alias pr='poetry run'

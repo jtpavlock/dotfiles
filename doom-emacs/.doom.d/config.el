@@ -62,6 +62,23 @@
 
 ;; automatically refresh magit on file changes
 (add-hook 'after-save-hook 'magit-after-save-refresh-status t)
+
+;; Projectile project type - python + poetry + pytest
+(after! projectile
+(projectile-register-project-type 'python-poetry '("poetry.lock")
+                                  :project-file "poetry.lock"
+                                  :compile "poetry build"
+                                  :test "pytest"
+                                  :test-dir "tests"
+                                  :test-prefix "test_"
+                                  :test-suffix"_test"
+                                  )
+)
+
+;; Doom sets this to true by default, but needs to be false to run tests
+;; multiple times on the same buffer.
+(setq comint-prompt-read-only nil)
+
 ;;;; Keybinds
 
 ;; venv virtual environments for python (pyvenv)
