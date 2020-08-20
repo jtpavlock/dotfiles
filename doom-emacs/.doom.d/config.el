@@ -65,19 +65,25 @@
 
 ;; Projectile project type - python + poetry + pytest
 (after! projectile
-(projectile-register-project-type 'python-poetry '("poetry.lock")
-                                  :project-file "poetry.lock"
-                                  :compile "poetry build"
-                                  :test "pytest"
-                                  :test-dir "tests"
-                                  :test-prefix "test_"
-                                  :test-suffix"_test"
-                                  )
-)
+  (projectile-register-project-type 'python-poetry '("poetry.lock")
+                                    :project-file "poetry.lock"
+                                    :compile "poetry build"
+                                    :test "poetry run pytest"
+                                    :test-dir "tests"
+                                    :test-prefix "test_"
+                                    :test-suffix "_test"
+                                    )
+  )
 
 ;; Doom sets this to true by default, but needs to be false to run tests
 ;; multiple times on the same buffer.
 (setq comint-prompt-read-only nil)
+
+;; ;; vterm popup from the right instead of bottom
+(after! vterm
+  (set-popup-rule! "*doom:vterm-popup:*" :size 0.33 :slot -4 :select t :quit 'current :ttl nil :side 'right
+    :action '+popup-display-buffer-stacked-side-window-fn)
+  )
 
 ;;;; Keybinds
 
@@ -99,5 +105,6 @@
        ))
 
 (map! :leader
-      :desc "Execute shell command" ";" #'shell-command
+      :desc "Execute shell command" ":" #'shell-command
+      :desc "M-x" ";" #'execute-extended-command
       )
