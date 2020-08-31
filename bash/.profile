@@ -15,3 +15,4 @@ if [ -d "$HOME/.poetry/bin" ] ; then
 fi
 
 export DOOMDIR=~/dotfiles/doom-emacs/.doom.d/
+export EDITOR=vim
