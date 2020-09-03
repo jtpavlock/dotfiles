@@ -85,6 +85,13 @@
     :action '+popup-display-buffer-stacked-side-window-fn)
   )
 
+;; clear flycheck auto-disabled-checkers after entering a (poetry) virtualenv
+(defun clear-flycheck-auto-disabled-checkers ()
+  "Clears any automatically disabled flycheck checkers."
+  (setq flycheck--automatically-disabled-checkers ()))
+
+(advice-add 'poetry-venv-toggle :after 'clear-flycheck-auto-disabled-checkers)
+
 ;;;; Keybinds
 
 ;; venv virtual environments for python (pyvenv)
@@ -102,6 +109,7 @@
       :localleader
       (:prefix ("p" . "poetry")
        :desc "menu" "p" #'poetry
+       :desc "toggle virtualenv" "v" #'poetry-venv-toggle
        ))
 
 (map! :leader
