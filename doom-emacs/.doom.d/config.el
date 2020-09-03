@@ -79,7 +79,7 @@
 ;; multiple times on the same buffer.
 (setq comint-prompt-read-only nil)
 
-;; ;; vterm popup from the right instead of bottom
+;; vterm popup from the right instead of bottom
 (after! vterm
   (set-popup-rule! "*doom:vterm-popup:*" :size 0.33 :slot -4 :select t :quit 'current :ttl nil :side 'right
     :action '+popup-display-buffer-stacked-side-window-fn)
