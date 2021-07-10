@@ -13,6 +13,11 @@ fi
 if [ -d "$HOME/.poetry/bin" ]; then
 	PATH="$HOME/.poetry/bin:$PATH"
 fi
+if [ -d "$HOME/.pyenv/" ]; then
+	export PYENV_ROOT="$HOME/.pyenv"
+	export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init --path)"
+fi
 
 # remap caps lock to escape
 setxkbmap -option caps:escape
