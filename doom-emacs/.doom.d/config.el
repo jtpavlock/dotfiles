@@ -52,11 +52,6 @@
 
 (setq projectile-project-search-path '("~/src/"))
 
-;; prefer microsoft python-langauge-server
-(after! lsp-python-ms
-  (set-lsp-priority! 'mspyls 1))
-(setq lsp-diagnostics-provider :none)
-
 ;;;; Magit
 ;; automatically refresh magit on file changes
 (add-hook 'after-save-hook 'magit-after-save-refresh-status t)
