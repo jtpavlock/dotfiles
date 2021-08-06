@@ -54,12 +54,13 @@
 
 ;;;; Magit
 ;; automatically refresh magit on file changes
-(add-hook 'after-save-hook 'magit-after-save-refresh-status t)
-
-(setq git-commit-summary-max-length 72) ;; commit summary turns red after
-(add-hook 'git-commit-setup-hook 'turn-off-auto-fill
-          ;; append to end of git-commit-setup-hook to ensure our hook trumps others.
-          t) ;; prevent magit from auto-wrapping lines
+(after! magit
+  (setq git-commit-summary-max-length 72) ;; commit summary turns red after
+  (add-hook 'after-save-hook 'magit-after-save-refresh-status t) ;; auto refresh magit on file changes
+  (add-hook 'git-commit-setup-hook 'turn-off-auto-fill
+            ;; append to end of git-commit-setup-hook to ensure our hook trumps others.
+            t) ;; prevent magit from auto-wrapping lines
+)
 
 ;; Projectile project type - python + poetry + pytest
 (after! projectile
