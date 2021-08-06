@@ -73,6 +73,18 @@
                                     )
   )
 
+;; lsp flychecker currently doesn't chain properly with other checkers
+;; https://github.com/hlissner/doom-emacs/issues/1530#issuecomment-725588733
+;; https://github.com/flycheck/flycheck/issues/1762#issue-615189170
+(add-hook! 'lsp-after-initialize-hook
+  (run-hooks (intern (format "%s-lsp-hook" major-mode))))
+
+; language specific fixes
+(defun python-flycheck-setup ()
+  (flycheck-add-next-checker 'lsp 'python-flake8))
+(add-hook 'python-mode-lsp-hook
+          #'python-flycheck-setup)
+
 ;; Org mode
 (setq org-directory "~/org/"
       org-roam-directory (concat org-directory "notes"))
