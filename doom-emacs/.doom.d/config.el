@@ -97,6 +97,13 @@
   (setq dap-python-debugger 'debugpy)
   (defun dap-python--pyenv-executable-find (command)
     (executable-find command))
+  (dap-register-debug-template "Moe"
+          (list :type "python"
+                :env '(("DEBUG" . "1"))
+                :taget-module "moe"
+                :request "launch"
+                :name "Moe")
+        )
   )
 
 ;; Python keybinds
