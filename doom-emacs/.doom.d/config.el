@@ -50,8 +50,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(setq projectile-project-search-path '("~/src/"))
-
 ;;;; Magit
 ;; automatically refresh magit on file changes
 (after! magit
@@ -60,8 +58,9 @@
   (add-hook 'git-commit-setup-hook 'turn-off-auto-fill
             ;; append to end of git-commit-setup-hook to ensure our hook trumps others.
             t) ;; prevent magit from auto-wrapping lines
-)
+  )
 
+;;;; Python
 ;; Projectile project type - python + poetry + pytest
 (after! projectile
   (projectile-register-project-type 'python-poetry '("poetry.lock")
@@ -80,25 +79,11 @@
 (add-hook! 'lsp-after-initialize-hook
   (run-hooks (intern (format "%s-lsp-hook" major-mode))))
 
-; language specific fixes
+;; language specific fixes
 (defun python-flycheck-setup ()
   (flycheck-add-next-checker 'lsp 'python-flake8))
 (add-hook 'python-mode-lsp-hook
           #'python-flycheck-setup)
-
-;; Org mode
-(setq org-directory "~/org/"
-      org-roam-directory (concat org-directory "notes"))
-
-;; Doom sets this to true by default, but needs to be false to run tests
-;; multiple times on the same buffer.
-(setq comint-prompt-read-only nil)
-
-;; vterm popup from the right instead of bottom
-(after! vterm
-  (set-popup-rule! "*doom:vterm-popup:*" :size 0.33 :slot -4 :select t :quit 'current :ttl nil :side 'right
-    :action '+popup-display-buffer-stacked-side-window-fn)
-  )
 
 ;; clear flycheck auto-disabled-checkers after entering a (poetry) virtualenv
 (defun clear-flycheck-auto-disabled-checkers ()
@@ -107,27 +92,51 @@
 
 (advice-add 'poetry-venv-toggle :after 'clear-flycheck-auto-disabled-checkers)
 
-;;;; Keybinds
+;; Debugging with dap-mode
+(after! dap-python
+  (setq dap-python-debugger 'debugpy)
+  (defun dap-python--pyenv-executable-find (command)
+    (executable-find command))
+  )
 
-;; venv virtual environments for python (pyvenv)
-(map! :after python
-      :map python-mode-map
-      :localleader
-      (:prefix ("v" . "venv")
-       :desc "Activate" "a" #'pyvenv-activate
-       :desc "Deactivate" "d" #'pyvenv-deactivate
-       ))
-
-;; python poetry commands
+;; Python keybinds
 (map! :after python
       :map python-mode-map
       :localleader
       (:prefix ("p" . "poetry")
        :desc "menu" "p" #'poetry
-       :desc "toggle virtualenv" "v" #'poetry-venv-toggle
+       :desc "toggle virtualenv" "v" #'poetry-venv-toggle)
+      (:prefix ("v" . "venv")
+       :desc "Activate" "a" #'pyvenv-activate
+       :desc "Deactivate" "d" #'pyvenv-deactivate
        ))
 
+
+;;;; Org mode
+(setq org-directory "~/org/"
+      org-roam-directory (concat org-directory "notes"))
+
+
+;;;; UI
+;; vterm popup from the right instead of bottom
+(after! vterm
+  (set-popup-rule! "*doom:vterm-popup:*" :size 0.33 :slot -4 :select t :quit 'current :ttl nil :side 'right
+    :action '+popup-display-buffer-stacked-side-window-fn)
+  )
+
+
+;;;; Misc
+;; Doom sets this to true by default, but needs to be false to run tests
+;; multiple times on the same buffer.
+(setq comint-prompt-read-only nil)
+
+;; projectile project root folder
+(setq projectile-project-search-path '("~/src/"))
+
+;; Global keybinds
 (map! :leader
       :desc "Execute shell command" ":" #'shell-command
       :desc "M-x" ";" #'execute-extended-command
+      :desc "debug" "d" #'dap-hydra
+      :desc "kill a buffer" "b D" #'ido-kill-buffer
       )
