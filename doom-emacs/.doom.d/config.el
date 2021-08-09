@@ -141,3 +141,7 @@
       :desc "debug" "d" #'dap-hydra
       :desc "kill a buffer" "b D" #'ido-kill-buffer
       )
+
+;; open urls in windows browser
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "wslview")

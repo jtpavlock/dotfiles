@@ -19,9 +19,7 @@ if [ -d "$HOME/.pyenv/" ]; then
 	eval "$(pyenv init --path)"
 fi
 
-# remap caps lock to escape
-setxkbmap -option caps:escape
-
 # set environment variables
 export DOOMDIR=~/dotfiles/doom-emacs/.doom.d/
 export EDITOR=vim
+export BROWSER=wslview
